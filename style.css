@@ -560,3 +560,110 @@ body {
     .ref-item { flex-direction: column; align-items: flex-start; gap: 12px; }
     .ref-title { font-size: 16px; }
 }
+/* ============ INTERACTIVE CAROUSEL LAYOUT STYLES ============ */
+.carousel-window-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 70px; /* Leave space clear for the arrows to float outside card bounds */
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden; /* Hides the inactive cards sliding outside the window */
+    border-radius: 32px;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth slide performance transition */
+    will-change: transform;
+}
+
+/* Enlarged Card Setup */
+.large-carousel-card {
+    flex: 0 0 100%; /* Forces each card to take up 100% width of the viewport grid */
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important; /* Horizontal distribution for massive display size */
+    align-items: stretch;
+    padding: 0 !important;
+    background: #ffffff;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.04) !important;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.large-slide-img {
+    flex: 1.2;
+    height: 420px; /* High clearance container for giant graphics visibility */
+    background-color: #fdfbfb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.large-slide-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.large-carousel-card:hover .large-slide-img img {
+    transform: scale(1.08);
+}
+
+.slide-text-content {
+    flex: 1;
+    padding: 50px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Smooth Arrow Navigation Buttons styling */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    z-index: 10;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-arrow:hover {
+    background-color: var(--ink);
+    color: #ffffff;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+.carousel-arrow:active { transform: translateY(-50%) scale(0.95); }
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* Responsive adjustments for Tablets/Mobile phone layouts */
+@media (max-width: 850px) {
+    .carousel-window-container { padding: 0; }
+    .carousel-arrow { display: none; } /* On mobile, normal touch scrolling handles swipe properties */
+    .large-carousel-card { flex-direction: column !important; }
+    .large-slide-img { height: 260px; width: 100%; }
+    .carousel-viewport { overflow-x: auto; scroll-snap-type: x mandatory; }
+    .large-carousel-card { scroll-snap-align: start; }
+    .carousel-track { transition: none; }
+}
