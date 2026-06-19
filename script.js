@@ -112,77 +112,117 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function drawChart() {
-        const ctx = chartCanvas.getContext('2d');
-        Chart.defaults.color = 'rgba(255, 255, 255, 0.8)'; 
-        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+    const ctx = chartCanvas.getContext('2d');
+    Chart.defaults.color = 'rgba(255, 255, 255, 0.8)'; 
+    Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
 
-        const maternalAges = [
-            '20', '21', '22', '23', '24', '25', '26', '27', '28', '29',
-            '30', '31', '32', '33', '34', '35', '36', '37', '38', '39',
-            '40', '41', '42', '43', '44', '45', '46', '47', '48', '49'
-        ];
-        
-        const birthOdds = [
-            2000, 1700, 1500, 1400, 1300, 1200, 1100, 1050, 1000, 950,
-            900, 800, 720, 600, 450, 350, 300, 250, 200, 150,
-            100, 80, 70, 50, 40, 30, 25, 20, 15, 10
-        ];
+    // Exact maternal age labels extracted from your Statista source file
+    const maternalAges = [
+        '20', '21', '22', '23', '24', '25', '26', '27', '28', '29',
+        '30', '31', '32', '33', '34', '35', '36', '37', '38', '39',
+        '40', '41', '42', '43', '44', '45', '46', '47', '48', '49'
+    ];
+    
+    // Inverted data mapping: Calculates the actual risk rate percentage (1 / Live Birth Odds * 100)
+    // This flips the direction mathematically so the bars correctly grow LONGER as maternal age increases.
+    const incidencePercentages = [
+        0.05, 0.06, 0.07, 0.07, 0.08, 0.08, 0.09, 0.10, 0.10, 0.11,
+        0.11, 0.13, 0.14, 0.17, 0.22, 0.29, 0.33, 0.40, 0.50, 0.67,
+        1.00, 1.25, 1.43, 2.00, 2.50, 3.33, 4.00, 5.00, 6.67, 10.00
+    ];
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: maternalAges.map(age => age + ' yrs'),
-                datasets: [{
-                    label: 'Live births per ONE incidence',
-                    data: birthOdds,
-                    backgroundColor: '#3498DB', 
-                    hoverBackgroundColor: '#85C1E9',
-                    borderRadius: 4,
-                    barPercentage: 0.85
-                }]
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: maternalAges.map(age => age + ' yrs'),
+            datasets: [{
+                label: 'Calculated Risk Value (Estimated % Rate per Birth)',
+                data: incidencePercentages,
+                backgroundColor: '#3498DB', 
+                hoverBackgroundColor: '#85C1E9',
+                borderRadius: 4,
+                barPercentage: 0.85
+            }]
+        },
+        options: {
+            indexAxis: 'y', // Keeps the layout horizontal matching Statista perfectly
+            responsive: true,
+            maintainAspectRatio: false, 
+            animation: {
+                duration: 1200,
+                easing: 'easeOutQuart'
             },
-            options: {
-                indexAxis: 'y', 
-                responsive: true,
-                maintainAspectRatio: false, 
-                animation: {
-                    duration: 1200,
-                    easing: 'easeOutQuart',
-                    delay: (context) => {
-                        let delay = 0;
-                        if (context.type === 'data' && context.mode === 'default') {
-                            delay = context.dataIndex * 40; 
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Number of live births per one incidence of Down syndrome in the United States as of 2024, by maternal age',
+                    color: '#ffffff',
+                    font: { size: 14, family: "'DM Sans', sans-serif", weight: 'bold' },
+                    padding: { bottom: 20 }
+                },
+                legend: {
+                    position: 'bottom',
+                    labels: { color: '#fff', font: { size: 12 } }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            // Maps user hover tooltips directly back to your clean "1 in X" textual format
+                            const rawOdds = [
+                                2000, 1700, 1500, 1400, 1300, 1200, 1100, 1050, 1000, 950,
+                                900, 800, 720, 600, 450, 350, 300, 250, 200, 150,
+                                100, 80, 70, 50, 40, 30, 25, 20, 15, 10
+                            ];
+                            return ` Estimated Risk: ${context.raw}% (Direct Odds: 1 in ${rawOdds[context.dataIndex]} live births)`;
                         }
-                        return delay;
-                    }
-                },
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Incidence of Down Syndrome by Maternal Age',
-                        color: '#3498DB',
-                        font: { size: 20, family: "'DM Sans', sans-serif", weight: 'bold' },
-                        padding: { bottom: 20 }
-                    },
-                    legend: {
-                        position: 'bottom',
-                        labels: { color: '#fff', font: { size: 14 } }
-                    }
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        title: { display: true, text: 'Number of Live Births (1 in X)', color: '#fff' }
-                    },
-                    y: {
-                        title: { display: true, text: "Mother's Age", color: '#fff' },
-                        ticks: { 
-                            autoSkip: false,
-                            font: { size: 11 } 
-                        } 
                     }
                 }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'Statistical Frequency Multiplier (Percentage %)', color: '#fff' }
+                },
+                y: {
+                    title: { display: true, text: "Mother's Age Bracket", color: '#fff' },
+                    ticks: { autoSkip: false, font: { size: 10 } }
+                }
             }
-        });
+        }
+    });
+}
+
+    // ============================================================
+    // 6. INTERACTIVE CAROUSEL SLIDER LOGIC
+    // ============================================================
+    const track = document.getElementById("carouselTrack");
+    const prevBtn = document.getElementById("prevSlideBtn");
+    const nextBtn = document.getElementById("nextSlideBtn");
+    const slides = Array.from(track.children);
+    
+    let currentIndex = 0;
+
+    function updateSlidePosition() {
+        // Calculate the translation percentage based on active card index
+        const amountToMove = currentIndex * -100;
+        track.style.transform = `translateX(${amountToMove}%)`;
     }
+
+    nextBtn.addEventListener("click", () => {
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Seamless loop reset back to the initial card
+        }
+        updateSlidePosition();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = slides.length - 1; // Loop back around to the final card layout
+        }
+        updateSlidePosition();
+    });
 });
