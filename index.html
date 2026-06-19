@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Down Syndrome (Trisomy 21)</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js for the Graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Subtle Grain Texture Overlay -->
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="logo">
+            <span class="logo-dot"></span>
+            Trisomy 21
+        </div>
+        <ul class="nav-links">
+            <li><a href="#causes">Causes</a></li>
+            <li><a href="#symptoms">Symptoms</a></li>
+            <li><a href="#testing">Testing & Age Risk</a></li>
+            <li><a href="#inheritance">Inheritance</a></li>
+            <li><a href="#wdsd">WDSD</a></li>
+            <li><a href="#references">Sources</a></li>
+        </ul>
+        <button class="nav-cta" onclick="document.getElementById('causes').scrollIntoView({behavior:'smooth'})">
+            Explore Knowledge
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Premium Hero Section -->
+    <section class="hero" id="home">
+        <h1 class="main-title" id="mainTitle">
+            <span class="word"><span>Trisomy</span></span>&nbsp;<span class="word"><span>21</span></span>
+        </h1>
+
+        <!-- Smooth Infinite Flowing Text Marquee -->
+        <div class="bg-text-wrap">
+            <div class="bg-text">
+                down syndrome &nbsp; down syndrome &nbsp; down syndrome &nbsp; down syndrome &nbsp;
+            </div>
+        </div>
+
+        <div class="subline" id="subline">
+            <p class="slogan-text">"Official terms: Down syndrome and Trisomy 21. Down's syndrome is also used but less formal in modern medical writing."</p>
+        </div>
+    </section>
+
+    <!-- Causes Section (Split Layout) -->
+    <section class="split-section" id="causes">
+        <div class="split-inner gs-reveal">
+            <div class="split-img">
+                <img src="https://www.expii.com/t/nondisjunction in meiosis-overview-impact-on-cells-10166" onerror="this.src='https://via.placeholder.com/800x600/eaeaea/555555?text=[+Your+Hand-Drawn+Meiosis+Diagram+]'" alt="Nondisjunction in Meiosis">
+            </div>
+            <div class="split-content">
+                <div class="eyebrow">The Root Cause</div>
+                <h2>Cellular Nondisjunction</h2>
+                <p>Chromosome 21 is affected by this disorder, resulting in an individual having an extra full or partial copy instead of the usual two.</p>
+                <p>It is primarily caused by a process called <strong>nondisjunction</strong>, which is an error in cell division during the formation of the egg or sperm. This results in an embryo with three copies of chromosome 21 instead of the usual two.</p>
+                <p style="font-size: 11px; color: var(--mute); margin-top: 10px; font-style: italic;">Graphic Source: Expii Platform Educational Database (expii.com)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symptoms & Treatment Section -->
+    <section class="team-section" id="symptoms">
+        <div class="team-head gs-reveal">
+            <div>
+                <div class="eyebrow">Signs, Symptoms & Interventions</div>
+                <h2>Physical, Cognitive &<br /><em>Therapeutic Outlooks</em>.</h2>
+            </div>
+            <p>Down syndrome manifests differently in every individual, but there are common clinical features and therapeutic pathways that guide physical and intellectual development.</p>
+        </div>
+
+        <!-- FIXED: Clean row architecture with no trailing duplicate components at the base -->
+        <div class="symptoms-rows-container" id="teamGrid">
+            
+            <div class="symptom-row-card gs-reveal">
+                <div class="symptom-row-img">
+                    <img src="physical_symptom.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Physical+Diagram+]'" alt="Physical Features Diagram">
+                </div>
+                <div class="symptom-row-content">
+                    <div class="symptom-badge">Anatomy</div>
+                    <h3>Physical Features</h3>
+                    <p>Symptoms include distinctive facial features (such as a flattened face, brachycephaly, and almond-shaped eyes that slant upward), poor muscle tone (hypotonia), and a large protruding tongue. Higher risks of congenital heart defects, hearing/vision problems, and thyroid issues require clinical care.</p>
+                    <p class="graphic-source">Graphic Source: AMBOSS Medical Knowledge Portal (amboss.com)</p>
+                </div>
+            </div>
+
+            <div class="symptom-row-card gs-reveal reverse-row">
+                <div class="symptom-row-img">
+                    <img src="development.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Development+Illustration+]'" alt="Developmental Illustration">
+                </div>
+                <div class="symptom-row-content">
+                    <div class="symptom-badge">Therapeutics</div>
+                    <h3>Development & Cognition</h3>
+                    <p>Individuals often experience delayed speech and physical development, alongside mild to moderate intellectual disability. Affected children usually require a coordinated team approach involving speech, physical, and occupational therapy, along with special education support.</p>
+                </div>
+            </div>
+
+            <div class="symptom-row-card gs-reveal">
+                <div class="symptom-row-img">
+                    <img src="health_risks.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Health+Management+Illustration+]'" alt="Health Risks Illustration">
+                </div>
+                <div class="symptom-row-content">
+                    <div class="symptom-badge">Prognosis</div>
+                    <h3>Management, Treatment & Future Outlook</h3>
+                    <p><strong>There is no cure for Down syndrome.</strong> Treatment focuses entirely on early intervention therapies. As they grow older, they will need regular medical monitoring for associated health issues like heart, thyroid, and vision problems. The long-term outlook is positive; many adults live independently, hold jobs, and have life expectancies into their 60s and beyond.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testing & Age Risk (Dark Glowing Section) -->
+    <section class="stats" id="testing">
+        <div class="stats-inner gs-reveal">
+            <div class="stats-text">
+                <div class="eyebrow" style="color: #fdc68a;">Maternal Age & Testing</div>
+                <h3>Understanding<br /><em>Risk Factors & Diagnostics</em>.</h3>
+                <p>Anyone can be a candidate, as it occurs worldwide across all populations. However, the risk of having a child with Down syndrome increases significantly with maternal age, particularly for women over the age of 35.</p>
+                <br>
+                <p><strong>Screening Tests:</strong> Maternal blood tests, which check for abnormal levels of specific pregnancy hormones and cell-free fetal DNA, and ultrasounds, which measure the fluid at the back of the fetus's neck (nuchal translucency). This fluid space tends to be larger in babies with Down syndrome.</p>
+                <p style="margin-top: 10px;"><strong>Diagnostic Tests:</strong> If screening tests show a high risk, diagnostic tests can directly examine the baby's chromosomes. These include Amniocentesis (extracting and testing amniotic fluid) and Chorionic Villus Sampling (CVS) (extracting and testing tissue directly from the placenta).</p>
+                <img src="amniocentesis.jpg" onerror="this.src='https://via.placeholder.com/600x400/eaeaea/555555?text=[+Amniocentesis+]'" alt="Amniocentesis Diagram" style="margin-top: 25px; border-radius: 12px; max-width: 100%;">
+                <p style="font-size: 11px; color: #8b847a; margin-top: 10px; font-style: italic;">Graphic Source: Public Health England Screening Leaflet Publications</p>
+            </div>
+            <div class="stats-chart">
+                <canvas id="ageChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inheritance Section -->
+    <section class="inheritance-showcase" id="inheritance">
+        <div class="inheritance-header gs-reveal">
+            <div class="eyebrow">Genetics</div>
+            <h2>How is it Inherited?</h2>
+            <p>Most cases are not inherited; they are caused by a random cellular event. <strong>Down syndrome is not classified as a standard dominant, recessive, or sex-linked genetic trait.</strong> There are three distinct structural variations:</p>
+        </div>
+
+        <div class="inheritance-diagram gs-reveal">
+            <img src="image_718b6e.jpg" onerror="this.src='https://via.placeholder.com/1000x400/eaeaea/555555?text=[+Different+Types+Diagram+]'" alt="Types of Down Syndrome">
+            <p style="font-size: 11px; color: var(--mute); margin-top: -30px; margin-bottom: 50px; font-style: italic;">Graphic Source: OER Texas State Higher Education Lesson Database</p>
+        </div>
+
+        <div class="type-cards-container">
+            <div class="type-card gs-reveal tilt-card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #3498DB, #2980B9);">1</div>
+                <h3>Trisomy 21</h3>
+                <span class="badge">~95% of cases</span>
+                <p><strong>Not inherited.</strong> All cells have an extra copy of chromosome 21. It is caused by a random cellular event (nondisjunction) during cell division in the egg or sperm formation.</p>
+            </div>
+            
+            <div class="type-card gs-reveal tilt-card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #E74C3C, #C0392B);">2</div>
+                <h3>Translocation</h3>
+                <span class="badge">~3-4% of cases</span>
+                <p><strong>Can be inherited.</strong> Passed from an unaffected parent who carries a rearranged chromosome. The extra copy of chromosome 21 is physically attached to another chromosome.</p>
+            </div>
+            
+            <div class="type-card gs-reveal tilt-card">
+                <div class="card-icon" style="background: linear-gradient(135deg, #2ECC71, #27AE60);">3</div>
+                <h3>Mosaic</h3>
+                <span class="badge">1-2% of cases</span>
+                <p><strong>Not inherited.</strong> A post-fertilization error produces a mix of normal 46-chromosome cells and trisomy 47-chromosome cells. Clinical symptoms vary heavily.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prevention, Reproductive Capacity & Scientific Research Section -->
+    <section class="split-section" id="research" style="background-color: var(--bg-2); border-top: 1px solid rgba(0,0,0,0.05);">
+        <div class="split-inner gs-reveal" style="flex-direction: row-reverse;">
+            <div class="split-img">
+                <div style="background: var(--ink); padding: 40px; border-radius: 24px; color: #f4edde; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <div class="eyebrow" style="color: #fdc68a; margin-bottom: 12px;">Reproductive Outlook</div>
+                    <h4 style="font-size: 22px; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.02em;">Fertility & Inheritance Factors</h4>
+                    <p style="font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.85); margin-bottom: 0;">Men with Down syndrome are generally infertile and cannot father children. Women with Down syndrome can have children, but there is a 50% chance that their child will also inherit the disorder.</p>
+                </div>
+            </div>
+            <div class="split-content">
+                <div class="eyebrow">Scientific Horizons</div>
+                <h2>Prevention & Research Status</h2>
+                <p><strong>Prevention:</strong> While there is no way to prevent the spontaneous genetic errors that cause most natural cases, modern reproductive technology offers preventive screening. Families utilizing In Vitro Fertilization (IVF) can use Preimplantation Genetic Testing (PGT) to screen embryos for chromosomal abnormalities, including an extra chromosome 21, before they are implanted in the uterus.</p>
+                <p><strong>Current Status of Research:</strong> Research is highly active, heavily focusing on improving cognitive function and understanding the strong link between Down syndrome and early-onset Alzheimer's disease. While a complete "cure" is not expected soon, researchers are exploring experimental gene therapies, such as attempting to silence the extra chromosome 21 in laboratory settings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WDSD Banner -->
+    <section class="action-banner gs-reveal" id="wdsd">
+        <img src="logo_of_syndrome_day.png" onerror="this.src='https://via.placeholder.com/300x300/2E86C1/FFFFFF?text=[+WDSD+Logo+]'" alt="World Down Syndrome Day" class="wdsd-logo">
+        <p>World Down Syndrome Day (WDSD) is on March 21. The date <strong>3/21</strong> stands for three copies of chromosome 21. Recognized by the UN in 2011, it aims to raise awareness, promote equality, and support inclusion, education, health care and rights for people with Down syndrome.</p>
+        <p style="font-size: 11px; color: var(--mute); margin-top: -15px; margin-bottom: 25px; font-style: italic;">Graphic Source: Storyset Medical Concept Vector Illustrations (storyset.com)</p>
+        <button class="nav-cta" onclick="window.open('https://www.cdc.gov/ncbddd/birthdefects/downsyndrome.html', '_blank')">Learn More About Early Intervention</button>
+    </section>
+
+    <!-- Premium Bibliography / References Section -->
+    <section class="references-section" id="references">
+        <div class="references-inner gs-reveal">
+            <div class="eyebrow">Academic Citations</div>
+            <h2>Source Materials & Reference Literature</h2>
+            <p class="ref-subtext">Our information is strictly grounded in data from leading global health institutes and pediatric medical centers.</p>
+            
+            <div class="references-list">
+                <div class="ref-item">
+                    <div class="ref-meta">
+                        <span class="ref-author">Centers for Disease Control and Prevention</span>
+                        <span class="ref-date">2026, January 8</span>
+                    </div>
+                    <a href="https://www.cdc.gov/ncbddd/birthdefects/downsyndrome.html" target="_blank" class="ref-title">
+                        Facts about Down Syndrome
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                </div>
+
+                <div class="ref-item">
+                    <div class="ref-meta">
+                        <span class="ref-author">Mayo Clinic Staff</span>
+                        <span class="ref-date">2024, November 12</span>
+                    </div>
+                    <a href="https://www.mayoclinic.org/diseases-conditions/down-syndrome/symptoms-causes/syc-20355977" target="_blank" class="ref-title">
+                        Down Syndrome: Symptoms & Causes
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                </div>
+
+                <div class="ref-item">
+                    <div class="ref-meta">
+                        <span class="ref-author">National Institute of Child Health and Human Development</span>
+                        <span class="ref-date">2023, November 30</span>
+                    </div>
+                    <a href="https://www.nichd.nih.gov/health/topics/downsyndrome" target="_blank" class="ref-title">
+                        Down Syndrome Health Topics Overview
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                </div>
+
+                <div class="ref-item">
+                    <div class="ref-meta">
+                        <span class="ref-author">Boston Children's Hospital</span>
+                        <span class="ref-date">2025, June 25</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=uDnyEX8wh_4" target="_blank" class="ref-title">
+                        What is Down syndrome? [Video Resource]
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Educational Portal on Trisomy 21. Science Resource Dashboard.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
