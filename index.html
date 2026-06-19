@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Down Syndrome (Trisomy 21)</title>
-
+    
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -114,7 +114,7 @@
 
             <div class="symptom-row-card gs-reveal">
                 <div class="symptom-row-img">
-                    <img src="health_risks.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Health+Management+Illustration+]'" alt="Health Risks Illustration">
+                    <img src="treatment.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Health+Management+Illustration+]'" alt="Health Risks Illustration">
                 </div>
                 <div class="symptom-row-content">
                     <div class="symptom-badge">Prognosis</div>
@@ -139,46 +139,79 @@
                 <img src="amniocentesis.jpg" onerror="this.src='https://via.placeholder.com/600x400/eaeaea/555555?text=[+Amniocentesis+]'" alt="Amniocentesis Diagram" style="margin-top: 25px; border-radius: 12px; max-width: 100%;">
                 <p style="font-size: 11px; color: #8b847a; margin-top: 10px; font-style: italic;">Graphic Source: Public Health England Screening Leaflet Publications</p>
             </div>
+            
             <div class="stats-chart">
                 <canvas id="ageChart"></canvas>
             </div>
         </div>
     </section>
 
-    <!-- Inheritance Section -->
-    <section class="inheritance-showcase" id="inheritance">
+    <!-- Inheritance Section (With Integrated Images) -->
+   <section class="inheritance-showcase" id="inheritance">
         <div class="inheritance-header gs-reveal">
             <div class="eyebrow">Genetics</div>
             <h2>How is it Inherited?</h2>
             <p>Most cases are not inherited; they are caused by a random cellular event. <strong>Down syndrome is not classified as a standard dominant, recessive, or sex-linked genetic trait.</strong> There are three distinct structural variations:</p>
         </div>
 
-        <div class="inheritance-diagram gs-reveal">
-            <img src="image_718b6e.jpg" onerror="this.src='https://via.placeholder.com/1000x400/eaeaea/555555?text=[+Different+Types+Diagram+]'" alt="Types of Down Syndrome">
-            <p style="font-size: 11px; color: var(--mute); margin-top: -30px; margin-bottom: 50px; font-style: italic;">Graphic Source: OER Texas State Higher Education Lesson Database</p>
-        </div>
+        <div class="carousel-window-container gs-reveal">
+            
+            <button class="carousel-arrow prev-btn" id="prevSlideBtn" aria-label="Previous Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
 
-        <div class="type-cards-container">
-            <div class="type-card gs-reveal tilt-card">
-                <div class="card-icon" style="background: linear-gradient(135deg, #3498DB, #2980B9);">1</div>
-                <h3>Trisomy 21</h3>
-                <span class="badge">~95% of cases</span>
-                <p><strong>Not inherited.</strong> All cells have an extra copy of chromosome 21. It is caused by a random cellular event (nondisjunction) during cell division in the egg or sperm formation.</p>
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+                    
+                    <div class="type-card large-carousel-card current-slide">
+                        <div class="symptom-row-img large-slide-img">
+                            <img src="trisomy-21.png" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Trisomy+21+Large+Graphic+]'" alt="Trisomy 21 Visual">
+                        </div>
+                        <div class="slide-text-content">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #3498DB, #2980B9);">1</div>
+                            <h3>Trisomy 21</h3>
+                            <span class="badge">~95% of cases</span>
+                            <p><strong>Not inherited.</strong> All cells have an extra copy of chromosome 21. It is caused by a random cellular event (nondisjunction) during cell division in the egg or sperm formation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="type-card large-carousel-card">
+                        <div class="symptom-row-img large-slide-img">
+                            <img src="translocation.png" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Translocation+Large+Graphic+]'" alt="Translocation Visual">
+                        </div>
+                        <div class="slide-text-content">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #E74C3C, #C0392B);">2</div>
+                            <h3>Translocation</h3>
+                            <span class="badge">~3-4% of cases</span>
+                            <p><strong>Can be inherited.</strong> Passed from an unaffected parent who carries a rearranged chromosome. The extra copy of chromosome 21 is physically attached to another chromosome.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="type-card large-carousel-card">
+                        <div class="symptom-row-img large-slide-img">
+                            <img src="mosaic.png" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Mosaic+Large+Graphic+]'" alt="Mosaic Visual">
+                        </div>
+                        <div class="slide-text-content">
+                            <div class="card-icon" style="background: linear-gradient(135deg, #2ECC71, #27AE60);">3</div>
+                            <h3>Mosaic</h3>
+                            <span class="badge">1-2% of cases</span>
+                            <p><strong>Not inherited.</strong> A post-fertilization error produces a mix of normal 46-chromosome cells and trisomy 47-chromosome cells. Clinical symptoms vary heavily.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            
-            <div class="type-card gs-reveal tilt-card">
-                <div class="card-icon" style="background: linear-gradient(135deg, #E74C3C, #C0392B);">2</div>
-                <h3>Translocation</h3>
-                <span class="badge">~3-4% of cases</span>
-                <p><strong>Can be inherited.</strong> Passed from an unaffected parent who carries a rearranged chromosome. The extra copy of chromosome 21 is physically attached to another chromosome.</p>
-            </div>
-            
-            <div class="type-card gs-reveal tilt-card">
-                <div class="card-icon" style="background: linear-gradient(135deg, #2ECC71, #27AE60);">3</div>
-                <h3>Mosaic</h3>
-                <span class="badge">1-2% of cases</span>
-                <p><strong>Not inherited.</strong> A post-fertilization error produces a mix of normal 46-chromosome cells and trisomy 47-chromosome cells. Clinical symptoms vary heavily.</p>
-            </div>
+
+            <button class="carousel-arrow next-btn" id="nextSlideBtn" aria-label="Next Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+
         </div>
     </section>
 
@@ -189,13 +222,12 @@
                 <div class="eyebrow">Reproductive Technology</div>
                 <h2>Clinical Prevention &<br /><em>Embryonic Screening</em>.</h2>
             </div>
-            <p>Analyzing modern clinical approaches to preimplantation genetic diagnostic tracking.</p>
         </div>
 
         <div class="symptoms-rows-container">
             <div class="symptom-row-card gs-reveal">
                 <div class="symptom-row-img">
-                    <img src="prevention_ivf.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+IVF+and+Screening+Illustration+]'" alt="Reproductive Screening Illustration">
+                    <img src="IVF.png" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+IVF+and+Screening+Illustration+]'" alt="Reproductive Screening Illustration">
                 </div>
                 <div class="symptom-row-content">
                     <div class="symptom-badge">IVF & PGT</div>
@@ -213,13 +245,12 @@
                 <div class="eyebrow">Population Genetics</div>
                 <h2>Fertility &<br /><em>Inheritance Capacities</em>.</h2>
             </div>
-            <p>Understanding biological reproductive outlooks and familial transition risk factors.</p>
         </div>
 
         <div class="symptoms-rows-container">
             <div class="symptom-row-card gs-reveal reverse-row">
                 <div class="symptom-row-img">
-                    <img src="fertility_outlook.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Fertility+Outlook+Illustration+]'" alt="Fertility Outlook Illustration">
+                    <img src="infertile_male.png" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Fertility+Outlook+Illustration+]'" alt="Fertility Outlook Illustration">
                 </div>
                 <div class="symptom-row-content">
                     <div class="symptom-badge">Reproduction</div>
@@ -237,13 +268,12 @@
                 <div class="eyebrow">Scientific Horizons</div>
                 <h2>Current Status of<br /><em>Genetic Research</em>.</h2>
             </div>
-            <p>Exploring therapeutic directions, experimental gene therapies, and clinical links under active investigation.</p>
         </div>
 
         <div class="symptoms-rows-container">
             <div class="symptom-row-card gs-reveal">
                 <div class="symptom-row-img">
-                    <img src="clinical_research.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Laboratory+Research+Illustration+]'" alt="Laboratory Research Illustration">
+                    <img src="genetic_engine.jpg" onerror="this.src='https://via.placeholder.com/600x400/d4e6f1/333333?text=[+Laboratory+Research+Illustration+]'" alt="Laboratory Research Illustration">
                 </div>
                 <div class="symptom-row-content">
                     <div class="symptom-badge">Therapeutics</div>
@@ -259,7 +289,7 @@
         <img src="logo_of_syndrome_day.png" onerror="this.src='https://via.placeholder.com/300x300/2E86C1/FFFFFF?text=[+WDSD+Logo+]'" alt="World Down Syndrome Day" class="wdsd-logo">
         <p>World Down Syndrome Day (WDSD) is on March 21. The date <strong>3/21</strong> stands for three copies of chromosome 21. Recognized by the UN in 2011, it aims to raise awareness, promote equality, and support inclusion, education, health care and rights for people with Down syndrome.</p>
         <p style="font-size: 11px; color: var(--mute); margin-top: -15px; margin-bottom: 25px; font-style: italic;">Graphic Source: Storyset Medical Concept Vector Illustrations (storyset.com)</p>
-        <button class="nav-cta" onclick="window.open('https://www.cdc.gov/ncbddd/birthdefects/downsyndrome.html', '_blank')">Learn More About Early Intervention</button>
+        <button class="nav-cta" onclick="window.open('https://www.worlddownsyndromeday.org/', '_blank')">Official Website of World Down Syndrome Day</button>
     </section>
 
     <!-- Premium Bibliography / References Section -->
